@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System - Attendance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RFID Attendance System</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li class="active"><a href="attendance.html">Attendance</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="attendance-section">
+                <div class="attendance-header">
+                    <h2>Today's Attendance</h2>
+                    <div class="date-selector">
+                        <label for="attendance-date">Select Date:</label>
+                        <input type="date" id="attendance-date">
+                        <button id="refresh-btn" class="btn">Refresh</button>
+                    </div>
+                </div>
+
+                <div class="rfid-scanner">
+                    <h3>RFID Scanner</h3>
+                    <div class="scanner-status" id="scanner-status">
+                        <p>Scanner ready</p>
+                    </div>
+                    <div class="last-scan" id="last-scan">
+                        <p>No scans yet</p>
+                    </div>
+                </div>
+
+                <div class="attendance-list">
+                    <table id="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Time In</th>
+                                <th>Time Out</th>
+                                <th>Student</th>
+                                <th>Roll No.</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/attendance.js"></script>
+</body>
+</html>

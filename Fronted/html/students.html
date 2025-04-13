@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System - Students</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RFID Attendance System</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li class="active"><a href="students.html">Students</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="student-management">
+                <div class="student-form">
+                    <h2>Add New Student</h2>
+                    <form id="add-student-form">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rollNumber">Roll Number:</label>
+                            <input type="text" id="rollNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="enrollNo">Enrollment Number:</label>
+                            <input type="text" id="enrollNo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rfid">RFID:</label>
+                            <input type="text" id="rfid" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department:</label>
+                            <input type="text" id="department" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <button type="submit" class="btn">Add Student</button>
+                    </form>
+                </div>
+
+                <div class="student-list">
+                    <h2>Student List</h2>
+                    <div class="search-box">
+                        <input type="text" id="student-search" placeholder="Search students...">
+                        <button id="search-btn" class="btn">Search</button>
+                    </div>
+                    <table id="student-table">
+                        <thead>
+                            <tr>
+                                <th>Roll No.</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>RFID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div id="edit-student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Student</h2>
+            <form id="edit-student-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-name">Full Name:</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-rollNumber">Roll Number:</label>
+                    <input type="text" id="edit-rollNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-enrollNo">Enrollment Number:</label>
+                    <input type="text" id="edit-enrollNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-rfid">RFID:</label>
+                    <input type="text" id="edit-rfid" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-department">Department:</label>
+                    <input type="text" id="edit-department" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-phone">Phone:</label>
+                    <input type="tel" id="edit-phone" required>
+                </div>
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/students.js"></script>
+</body>
+</html>

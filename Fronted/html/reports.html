@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System - Reports</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../https://cdn.jsdelivr.net/npm/chart.js">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RFID Attendance System</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                    <li class="active"><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="reports-section">
+                <div class="report-filters">
+                    <h2>Generate Report</h2>
+                    <form id="report-form">
+                        <div class="form-group">
+                            <label for="report-type">Report Type:</label>
+                            <select id="report-type">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="form-group date-range" id="custom-date-range">
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date">
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-filter">Filter by Student:</label>
+                            <select id="student-filter">
+                                <option value="all">All Students</option>
+                                <!-- Filled by JavaScript -->
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Generate Report</button>
+                        <button type="button" id="export-btn" class="btn">Export to CSV</button>
+                    </form>
+                </div>
+
+                <div class="report-results">
+                    <div class="chart-container">
+                        <canvas id="attendance-chart"></canvas>
+                    </div>
+                    <table id="report-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Student</th>
+                                <th>Roll No.</th>
+                                <th>Time In</th>
+                                <th>Time Out</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>
