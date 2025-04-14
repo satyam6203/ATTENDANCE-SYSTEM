@@ -63,4 +63,14 @@ public class AttendanceController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return ResponseEntity.ok(attendanceService.getAttendanceReport(startDate, endDate));
     }
+
+    @PostMapping("/mark-location")
+    public ResponseEntity<?> markAttendanceWithLocation(@RequestBody LocationRequest request) {
+        Attendance attendance = attendanceService.markAttendanceWithLocation(request);
+        if (attendance == null) {
+            return ResponseEntity.badRequest().body("Student not found with ID: " + request.getStudentId());
+        }
+        return ResponseEntity.ok(attendance);
+    }
+
 }
