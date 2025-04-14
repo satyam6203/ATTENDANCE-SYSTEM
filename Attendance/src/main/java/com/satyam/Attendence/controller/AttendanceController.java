@@ -17,7 +17,7 @@ public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;
 
-    @GetMapping("/students")
+    @GetMapping("/AllStudents")
     public List<Student> getAllStudents() {
         return attendanceService.getAllStudents();
     }

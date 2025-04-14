@@ -4,6 +4,7 @@ import com.satyam.Attendence.model.*;
 import com.satyam.Attendence.repo.AttendanceRepository;
 import com.satyam.Attendence.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -72,5 +73,28 @@ public class AttendanceService {
 
     public List<Attendance> getAttendanceReport(LocalDate startDate, LocalDate endDate) {
         return attendanceRepository.findByDateBetween(startDate, endDate);
+    }
+
+
+    public ResponseEntity<String> findByRollNumber(String rollNumber){
+        Student student= studentRepository.findByRollNumber(rollNumber);
+        if(student != null){
+            return ResponseEntity.ok().body("student is find by roll_number :"+rollNumber);
+        }
+        else{
+            return ResponseEntity.badRequest().body("stundet is not found :");
+        }
+
+    }
+
+    public  ResponseEntity<String> findByEnrollNo(String enrollNo){
+        Student student= studentRepository.findByEnrollNo(enrollNo);
+        if(student != null){
+            return ResponseEntity.ok().body("student name :"+student.getName()+
+                    "\nEnrollmentNumber :"+student.getEnrollNo());
+        }
+        else{
+            return ResponseEntity.badRequest().body("Student is not found with the id :");
+        }
     }
 }
